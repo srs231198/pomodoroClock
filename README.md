@@ -1,2 +1,2 @@
 # pomodoroClock
-A productivity timer made using HTML, CSS and JavaScript
+A productivity timer made using HTML, CSS, JavaScript and Bootstrap
