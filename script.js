@@ -5,10 +5,12 @@ var resetBtn = document.querySelector("#reset");
 
 //start button for the timer
 startBtn.addEventListener("click", function() {
-    var counter = 0;
-    var minutes = 25;
-    var seconds = 59;
+    var minuteCounter = 0;
+    var secondCounter = 0;
+    var minutes = Number(document.querySelector("#minutes").innerHTML);
+    var seconds = Number(document.querySelector("#seconds").innerHTML);
 
+    //countdown minutes
     var minute_time = setInterval(function() {
         if(minutes < 0){
             return;
@@ -22,14 +24,27 @@ startBtn.addEventListener("click", function() {
             document.querySelector("#minutes").innerHTML = minutes.toString();
         }
 
-        counter++;
-        if(counter === 25) {
+        //countdown seconds
+        var second_time = setInterval(function(){
+
+            
+
+            secondCounter++
+            if(secondCounter === 59){
+                clearInterval(second_time);
+            }
+        }, 1000);
+
+        minuteCounter++;
+        if(minuteCounter === 25) {
             clearInterval(minute_time);
         }
 
-    }, 1000);
+    }, 60000);
+
+    stopBtn.onclick = function() {clearInterval(minute_time);};
 });
 
-stopBtn.addEventListener("click", function() {
-});
+// stopBtn.addEventListener("click", function() {
+// });
 
