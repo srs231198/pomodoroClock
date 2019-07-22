@@ -19,6 +19,7 @@ startBtn.addEventListener("click", function() {
     //countdown minutes
     var minute_time = setInterval(function() {
         if(minutes < 0){
+            alert("time for a break!");
             return;
         }
         else if(minutes <= 10){
@@ -35,7 +36,7 @@ startBtn.addEventListener("click", function() {
             clearInterval(minute_time);
         }
 
-    }, 60000);
+    }, 59000);
 
     //countdown seconds
     var second_time = setInterval(function(){
